@@ -2,7 +2,15 @@
 
 - Download the dataset from 'data\source\data.txt'
 - Create an EC2 instance > docker container
+- - Spin up the Legacy MSSQL Server
+```
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=FdeEnterprisePass123!" -p 1433:1433 --name legacy-mssql -d mcr.microsoft.com/mssql/server:2022-latest
 
+# or multi-line in windows 
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=FdeEnterprisePass123!" ^
+   -p 1433:1433 --name legacy-mssql ^
+   -d mcr.microsoft.com/mssql/server:2022-latest
 
+```
+- install the req > pip install -r requirements.txt
 
-- 
